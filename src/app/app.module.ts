@@ -12,6 +12,7 @@ import { LigasComponent } from './componentes/ligas/ligas.component';
 import { JornadasComponent } from './componentes/jornadas/jornadas.component';
 import { EquiposComponent } from './componentes/equipos/equipos.component';
 import { AdminstradorComponent } from './componentes/adminstrador/adminstrador.component';
+import { CuentaComponent } from './componentes/cuenta/cuenta.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminstradorComponent } from './componentes/adminstrador/adminstrador.c
     LigasComponent,
     JornadasComponent,
     EquiposComponent,
-    AdminstradorComponent
+    AdminstradorComponent,
+    CuentaComponent
   ],
   imports: [
     BrowserModule,

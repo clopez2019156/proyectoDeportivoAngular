@@ -23,9 +23,9 @@ registro(usuario: Usuario): Observable<any>{
   let params = JSON.stringify(usuario);
   return this._http.post(this.url + "crearUsuario", params, {headers: this.headersVariable})
 }
-registroAdmin(usuario: Usuario): Observable<any>{
+registroAdmin(usuario: Usuario, token: any): Observable<any>{
   let params = JSON.stringify(usuario);
-  let headersToken = this.headersVariable.set("Authorization", this.getToken());
+  let headersToken = this.headersVariable.set("Authorization", token);
   return this._http.post(this.url + "crearUsuarioAdmin", params, {headers: headersToken})
 }
 ObtenerUsuarios(): Observable<any>{
@@ -53,7 +53,14 @@ eliminarUsuario(id: String): Observable<any>{
 obtenerUsuario(id: String): Observable<any>{
   return this._http.get(this.url +"obtenerUsuarioID/" + id, {headers: this.headersVariable})
 }
+verCuenta() : Observable<any>{
 
+  let headersToken = this.headersVariable.set('Authorization', this.getToken());
+
+  return this._http.get(this.url +'verCuenta',{headers: headersToken});
+
+
+ }
 editarMiCuenta(usuario: Usuario): Observable<any>{
   let params = JSON.stringify(usuario);
   let headersToken = this.headersVariable.set("Authorization", this.getToken());

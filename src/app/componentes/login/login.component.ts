@@ -68,14 +68,14 @@ export class LoginComponent implements OnInit {
           }
         })
 
-       /* if(this.identidad.rol==="ROL_USUARIO"){
+        if(this.identidad.rol==="ROL_USUARIO"){
 
           this._router.navigate(["/principal"]);
           console.log(this.identidad.rol)
 
         }else if(this.identidad.rol==="ROL_ADMIN"){
 
-          this._router.navigate(["/hoteles"]);
+          this._router.navigate(["/administrador"]);
           console.log(this.identidad.rol)
         }
         else if(this.identidad.rol==="ROL_ADMINHOTEL"){
@@ -83,7 +83,7 @@ export class LoginComponent implements OnInit {
           this._router.navigate(["/todoshoteles"]);
           console.log(this.identidad.rol)
         }
-*/ },error => {
+ },error => {
         Swal.fire({
           position: 'top-end',
           icon: 'error',
