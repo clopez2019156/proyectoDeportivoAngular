@@ -30,7 +30,19 @@ export class LigasService {
     return this._http.get(this.url + "verLigas",  {headers: headersToken});
 
   }
-
+  obtenerLiga(id: String, token: any): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.get(this.url +"obtenerLiga/" + id, {headers: headersToken})
+  }
+  editarLiga(liga: Ligas, token: any): Observable<any>{
+    let params = JSON.stringify(liga);
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.put(this.url + "editarLiga/" + liga._id, params , {headers: headersToken})
+  }
+  eliminarLiga(id: String,  token: any): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.delete(this.url +"eliminarLiga/" + id, {headers: headersToken})
+  }
   buscarLiga(usuario: any):Observable<any>{
 
     let params = JSON.stringify(usuario);

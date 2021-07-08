@@ -30,6 +30,11 @@ export class EquiposService {
     return this._http.get(this.url + "verEquipos",  {headers: headersToken});
 
   }
+  obtenerListaEquipo(equipo: any): Observable<any>{
+    let params = JSON.stringify(equipo);
+
+    return this._http.post(this.url + "verEquipos", params, {headers: this.headersVariable})
+  }
 
   getToken(){
     var token2 = localStorage.getItem("token");

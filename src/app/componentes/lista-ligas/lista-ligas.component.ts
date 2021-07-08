@@ -12,8 +12,9 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class ListaLigasComponent implements OnInit {
   public token: String;
-
-public ligaModel: any;
+  public idLigas =  ''
+  public listaLigas: any;
+public ligaModel: Ligas;
 public ligas: any;
 public nombreBuscar = {nombre: ''};
 public ligaSeleccionado: any;
@@ -32,12 +33,10 @@ public ligaSeleccionado: any;
   verLigas(){
     this._ligasService.verLigas().subscribe(
       response=>{
-        this.ligaModel = response.ligasEncontradas;
-        console.log(this.ligaModel)
+        this.listaLigas = response.ligasEncontradas;
+        console.log(response.ligasEncontradas)
       },
       error=>{
-
-
     }
     )
   }
@@ -70,5 +69,31 @@ buscarLigaNombre(nombre: any){
     }
   )
 }
+editarLiga(){
+  this._ligasService.editarLiga(this.ligaModel, this.token).subscribe(
+   response => {
+   console.log(response);
+   this.verLigas();
 
+  })
+}
+
+eliminarLiga(id: any){
+  this._ligasService.eliminarLiga(id, this.token).subscribe(
+    response => {
+      console.log(response)
+      this.verLigas();
+    }
+  )
+
+ }
+ obtenerLiga(_id: any){
+  this.idLigas=_id;
+  this._ligasService.obtenerLiga(this.idLigas, this.token).subscribe(
+    response => {
+      this.ligaModel = response.liga_registrado
+      console.log(response.liga_registrado);
+  })
+
+}
 }

@@ -6,6 +6,7 @@ import { EquiposComponent } from './componentes/equipos/equipos.component';
 import { JornadasComponent } from './componentes/jornadas/jornadas.component';
 
 import { LigasComponent } from './componentes/ligas/ligas.component';
+import { ListaEquiposComponent } from './componentes/lista-equipos/lista-equipos.component';
 import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: "principal", component: PrincipalComponent},
   {path: "listaLigas", component: ListaLigasComponent},
   {path: "equipos", component: EquiposComponent},
+  {path: "listaEquipos", component: ListaEquiposComponent},
 
   {path: "**", component: LoginComponent}
 ];

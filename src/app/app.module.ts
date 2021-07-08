@@ -33,14 +33,14 @@ import { RouterModule } from '@angular/router';
     PrincipalComponent,
     ListaLigasComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule,
-    RouterModule
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

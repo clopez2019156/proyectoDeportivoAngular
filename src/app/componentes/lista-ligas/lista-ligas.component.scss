@@ -4,7 +4,12 @@
     float: none;
     /* Added */
     margin-bottom: 30px;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
     /* Added */
+}
+
+body {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 .offset {

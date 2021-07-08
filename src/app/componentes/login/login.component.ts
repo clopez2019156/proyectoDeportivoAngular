@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
           }
         })
 
-        if(this.identidad.rol==="ROL_USUARIO"){
+        if(this.identidad.rol==="ROL_USER"){
 
           this._router.navigate(["/principal"]);
           console.log(this.identidad.rol)
