@@ -20,13 +20,23 @@ export class LigasService {
 
   registroLiga(liga: Ligas, token: any): Observable<any>{
     let params = JSON.stringify(liga);
-    let headersToken = this.headersVariable.set("Authorization", token);
+    let headersToken = this.headersVariable.set('Authorization', this.getToken())
     return this._http.post(this.url + "crearLiga", params , {headers: headersToken})
   }
 
-  verLigas(token: any): Observable<any>{
-    let headersToken = this.headersVariable.set("Authorization", token);
+  verLigas(): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", this.token);
     return this._http.get(this.url + "verLigas",  {headers: headersToken});
 
+  }
+
+  getToken(){
+    var token2 = localStorage.getItem("token");
+    if(token2 != "undefined"){
+      this.token = token2;
+    }else{
+      this.token = null;
+    }
+    return this.token;
   }
 }

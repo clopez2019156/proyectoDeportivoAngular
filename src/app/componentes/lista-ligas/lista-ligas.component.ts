@@ -14,7 +14,7 @@ export class ListaLigasComponent implements OnInit {
   public token: String;
   public ligaModel: Ligas;
 
-  constructor(private _ligasService: LigasService, private _usuarioService: UsuarioService,
+  constructor(public _ligasService: LigasService, private _usuarioService: UsuarioService,
     private _router: Router) {
     this.token = this._usuarioService.getToken();
     this.ligaModel = new Ligas("","","");
@@ -25,9 +25,10 @@ export class ListaLigasComponent implements OnInit {
   }
 
   verLigas(){
-    this._ligasService.verLigas(this.token).subscribe(
+    this._ligasService.verLigas().subscribe(
       response=>{
         this.ligaModel = response.ligasEncontradas;
+        console.log(this.ligaModel)
       },
       error=>{
 
