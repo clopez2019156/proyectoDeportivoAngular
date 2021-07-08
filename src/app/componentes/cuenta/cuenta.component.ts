@@ -7,7 +7,7 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 @Component({
   selector: 'app-cuenta',
   templateUrl: './cuenta.component.html',
-  styleUrls: ['./cuenta.component.css'],
+  styleUrls: ['./cuenta.component.scss'],
   providers: [UsuarioService]
 })
 export class CuentaComponent implements OnInit {
@@ -33,8 +33,8 @@ export class CuentaComponent implements OnInit {
     )
   }
 
-  obtenerUsuarioId(idUsuario: any){
-    this._usuarioService.obtenerUsuario(idUsuario).subscribe(
+  obtenerUsuarioId(id: any){
+    this._usuarioService.obtenerUsuario(id).subscribe(
       response=>{
         this.idUsuarioModel = response.usuarioEncontrado;
         console.log(response);
@@ -58,8 +58,8 @@ export class CuentaComponent implements OnInit {
     this._usuarioService.eliminarUsuario(idUsuario).subscribe(
       response=>{
         console.log(response);
-       // this._router.navigate[("/login")];
-        localStorage.clear();
+
+       localStorage.clear();
       },error=>{
         console.log(<any>error)
       }

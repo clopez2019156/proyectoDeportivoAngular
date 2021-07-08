@@ -13,6 +13,9 @@ import { JornadasComponent } from './componentes/jornadas/jornadas.component';
 import { EquiposComponent } from './componentes/equipos/equipos.component';
 import { AdminstradorComponent } from './componentes/adminstrador/adminstrador.component';
 import { CuentaComponent } from './componentes/cuenta/cuenta.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { CuentaComponent } from './componentes/cuenta/cuenta.component';
     JornadasComponent,
     EquiposComponent,
     AdminstradorComponent,
-    CuentaComponent
+    CuentaComponent,
+    PrincipalComponent,
+    ListaLigasComponent,
+
   ],
   imports: [
     BrowserModule,

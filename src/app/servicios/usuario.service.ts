@@ -51,7 +51,7 @@ eliminarUsuario(id: String): Observable<any>{
 }
 
 obtenerUsuario(id: String): Observable<any>{
-  return this._http.get(this.url +"obtenerUsuarioID/" + id, {headers: this.headersVariable})
+  return this._http.post(this.url +"obtenerUsuarioID/" + id, {headers: this.headersVariable})
 }
 verCuenta() : Observable<any>{
 
