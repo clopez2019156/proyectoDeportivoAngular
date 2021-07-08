@@ -12,7 +12,11 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class ListaLigasComponent implements OnInit {
   public token: String;
-  public ligaModel: Ligas;
+
+public ligaModel: any;
+public ligas: any;
+public nombreBuscar = {nombre: ''};
+public ligaSeleccionado: any;
 
   constructor(public _ligasService: LigasService, private _usuarioService: UsuarioService,
     private _router: Router) {
@@ -22,6 +26,7 @@ export class ListaLigasComponent implements OnInit {
 
   ngOnInit(): void {
     this.verLigas();
+    this.mostrarHoteles();
   }
 
   verLigas(){
@@ -32,9 +37,38 @@ export class ListaLigasComponent implements OnInit {
       },
       error=>{
 
-      
+
     }
     )
   }
+  mostrarHoteles(){
+    this._ligasService.verLigas().subscribe(
+      response=>{
+        console.log(response)
+        this.ligas=response.ligasEncontradas;
+      },
+      error=>{
+        console.log(<any>error)
+      }
+    )
+}
+
+
+buscarLigaNombre(nombre: any){
+  this.nombreBuscar.nombre = nombre;
+  this._ligasService.buscarLiga(this.nombreBuscar).subscribe(
+    response=>{
+      console.log(response);
+      this.ligaSeleccionado=response.ligaEncontrada;
+      localStorage.setItem("ligaSeleccionado",JSON.stringify(this.ligaSeleccionado));
+      this._router.navigate(['/equipos']);
+    },
+    error=>{
+      console.log(<any>error);
+
+
+    }
+  )
+}
 
 }

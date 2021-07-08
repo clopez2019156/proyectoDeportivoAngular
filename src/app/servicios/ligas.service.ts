@@ -13,6 +13,7 @@ export class LigasService {
   public url: String;
   public token: any;
   public identidad: any;
+  public liga: any;
   public headersVariable = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(public _http: HttpClient, public _usuarioService: UsuarioService) {
@@ -30,6 +31,13 @@ export class LigasService {
 
   }
 
+  buscarLiga(usuario: any):Observable<any>{
+
+    let params = JSON.stringify(usuario);
+
+    return this._http.post(this.url+'buscarLiga', params, {headers: this.headersVariable});
+
+  }
   getToken(){
     var token2 = localStorage.getItem("token");
     if(token2 != "undefined"){
@@ -38,5 +46,14 @@ export class LigasService {
       this.token = null;
     }
     return this.token;
+  }
+  getLiga(){
+    var liga2 = JSON.parse(localStorage.getItem("ligaSeleccionado")||"{}");
+    if(liga2 != "undefined"){
+      this.liga = liga2;
+    }else {
+      this.liga = null;
+    }
+    return this.liga;
   }
 }

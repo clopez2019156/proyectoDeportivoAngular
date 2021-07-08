@@ -12,6 +12,7 @@ export class UsuarioService {
   public url: String;
   public headersVariable = new HttpHeaders().set('Content-Type', 'application/json');
   public token: any;
+  public liga: any;
   public identidad: any;
   public gestor: any;
   public hotel: any;
@@ -94,6 +95,16 @@ getToken(){
   return this.token;
 }
 
-
-
+getLiga(){
+  var hotel2 = JSON.parse(localStorage.getItem("ligaSeleccionado")||"{}");
+  if(hotel2 != "undefined"){
+    this.liga = hotel2;
+  }else {
+    this.liga = null;
+  }
+  return this.liga;
 }
+}
+
+
+

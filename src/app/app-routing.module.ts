@@ -21,6 +21,7 @@ const routes: Routes = [
   {path: "cuenta", component: CuentaComponent},
   {path: "principal", component: PrincipalComponent},
   {path: "listaLigas", component: ListaLigasComponent},
+  {path: "equipos", component: EquiposComponent},
 
   {path: "**", component: LoginComponent}
 ];

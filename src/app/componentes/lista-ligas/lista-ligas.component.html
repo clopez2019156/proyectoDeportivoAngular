@@ -1,24 +1,19 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-header">
-
+<div class="card text-center" style="width: 35rem;">
+    <div class="card-header ">Tus Ligas
     </div>
-
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
+    <ul class="list-group list-group-flush ">
+        <tr *ngFor="let hab of ligaModel">
+            <td>{{hab.nombre}}</td>
 
             <ul class="list-group list-group-flush">
+                <li class="list-group-item "></li>
                 <li class="list-group-item"></li>
-                <li class="list-group-item"></li>
-
             </ul>
-
-
-
-            <div class="card" style="width: 15rem;">
-                <button type="button" class="btn btn-primary btn-lg" routerLink="/ligas" routerLinkActive="active">Regresar</button>
+            <br>
+            <div class="buttons">
+                <button class="offset" routerLink="/equipos" routerLinkActive="active" (click)="buscarLigaNombre(hab.nombre)">Agregar Equipo</button>
             </div>
+            <br>
+        </tr>
+    </ul>
+</div>
