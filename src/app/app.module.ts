@@ -35,10 +35,11 @@ import { RouterModule } from '@angular/router';
 
   ],
   imports: [
-    BrowserModule, 
-CommonModule,
-FormsModule,
-RouterModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
