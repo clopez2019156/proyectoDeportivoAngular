@@ -23,4 +23,10 @@ export class LigasService {
     let headersToken = this.headersVariable.set("Authorization", token);
     return this._http.post(this.url + "crearLiga", params , {headers: headersToken})
   }
+
+  verLigas(token: any): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.get(this.url + "verLigas",  {headers: headersToken});
+
+  }
 }
