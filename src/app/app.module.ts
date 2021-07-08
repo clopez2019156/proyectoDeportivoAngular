@@ -15,6 +15,7 @@ import { AdminstradorComponent } from './componentes/adminstrador/adminstrador.c
 import { CuentaComponent } from './componentes/cuenta/cuenta.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ligas } from 'src/app/modelos/ligas.model';
 import { LigasService } from 'src/app/servicios/ligas.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
@@ -13,7 +14,8 @@ export class ListaLigasComponent implements OnInit {
   public token: String;
   public ligaModel: Ligas;
 
-  constructor(private _ligasService: LigasService, private _usuarioService: UsuarioService) {
+  constructor(private _ligasService: LigasService, private _usuarioService: UsuarioService,
+    private _router: Router) {
     this.token = this._usuarioService.getToken();
     this.ligaModel = new Ligas("","","");
    }
