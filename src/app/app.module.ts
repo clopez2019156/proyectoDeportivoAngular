@@ -16,6 +16,7 @@ import { CuentaComponent } from './componentes/cuenta/cuenta.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -34,11 +35,10 @@ import { CommonModule } from '@angular/common';
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    CommonModule
+    BrowserModule, 
+CommonModule,
+FormsModule,
+RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
