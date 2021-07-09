@@ -75,14 +75,10 @@ export class LoginComponent implements OnInit {
 
         }else if(this.identidad.rol==="ROL_ADMIN"){
 
-          this._router.navigate(["/administrador"]);
+          this._router.navigate(["/pagadministrador"]);
           console.log(this.identidad.rol)
         }
-        else if(this.identidad.rol==="ROL_ADMINHOTEL"){
 
-          this._router.navigate(["/todoshoteles"]);
-          console.log(this.identidad.rol)
-        }
  },error => {
         Swal.fire({
           position: 'top-end',

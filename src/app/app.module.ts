@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -15,8 +15,11 @@ import { AdminstradorComponent } from './componentes/adminstrador/adminstrador.c
 import { CuentaComponent } from './componentes/cuenta/cuenta.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ListaLigasComponent } from './componentes/lista-ligas/lista-ligas.component';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ListaEquiposComponent } from './componentes/lista-equipos/lista-equipos.component';
+import { PagadministradorComponent } from './componentes/pagadministrador/pagadministrador.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { RouterModule } from '@angular/router';
     CuentaComponent,
     PrincipalComponent,
     ListaLigasComponent,
+    ListaEquiposComponent,
+    UsuariosComponent,
+    PagadministradorComponent,
 
 
   ],
@@ -40,6 +46,7 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    RouterModule,
     CommonModule
   ],
   providers: [],

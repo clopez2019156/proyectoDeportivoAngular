@@ -23,7 +23,7 @@ export class EquiposComponent implements OnInit {
   constructor( public _ligasService: LigasService, public _usuarioService: UsuarioService,
     public _equiposService: EquiposService) {
     this.token = this._usuarioService.getToken();
-      this.modeloAgregarEquipo = new Equipos("","","","","" ,"","","");
+      this.modeloAgregarEquipo = new Equipos("","","","","" ,"","");
       this.liga = _ligasService.getLiga();
       this.modeloAgregarEquipo.liga = this._ligasService.getLiga()._id;
     }

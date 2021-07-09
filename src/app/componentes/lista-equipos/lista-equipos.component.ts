@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipos } from 'src/app/modelos/equipo.model';
 import { EquiposService } from 'src/app/servicios/equipos.service';
 import { LigasService } from 'src/app/servicios/ligas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-equipos',
@@ -10,29 +12,34 @@ import { LigasService } from 'src/app/servicios/ligas.service';
 })
 export class ListaEquiposComponent implements OnInit {
 
-  public equipos: any = {liga: ''};
-  public equiposs:any;
+  public equipo: any = {liga: ''};
+
+  public equiposEncontrados: any;
+
+
     constructor(public _ligaService: LigasService,
-      public _equipoService: EquiposService,) {
+      public _equipoService: EquiposService,private _router: Router) {
         //this.eventos = _eventoService.getHotel();
+        //this.equiposs = new Equipos("","","","","" ,"","","");
        }
 
 
   ngOnInit(): void {
-    this.obtenerListaEquipos()
+    this.obtenerListaEquipo()
   }
 
-  obtenerListaEquipos(){
-  this.equipos.liga = this._equipoService.getLiga()._id;
-  this._equipoService.obtenerListaEquipo(this.equipos).subscribe(
+  obtenerListaEquipo(){
+  this.equipo.liga = this._equipoService.getLiga()._id;
+  this._equipoService.obtenerListaEquipo(this.equipo).subscribe(
     response => {
-      this.equiposs = response.equiposEncontrados;
-        console.log(response.equiposEncontrados);
+      this.equiposEncontrados = response.equiposEncontrados;
+       console.log(response.equiposEncontrados);
     },error=>{
-      console.log(<any>error);
+      console.log();
 
   }
   )
 }
+
 
 }

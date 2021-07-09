@@ -1,9 +1,10 @@
 <br>
-<button type="submit" type="reset" class="btn btn-primary" routerLink="/listaLigas" routerLinkActive="active">Regresar</button>
-
+<div class="buttons">
+    <button class="offset" routerLink="/listaLigas" routerLinkActive="active">Regresar</button>
+</div>
 <br>
 <div class="container">
-    <h1>Bienveni@, aquí puedes visualizar los eventos del Hotel</h1>
+    <h1>Bienveni@, aquí puedes visualizar la tabla de posiciones</h1>
     <br>
 
     <img class="avatar" src="assets/jugadores-de-futbol.png"><br>
@@ -18,16 +19,18 @@
                 <th scope="col">Diferencia de Goles</th>
             </tr>
         </thead>
-        <tbody *ngFor="let eq of equiposs">
-            <tr>
-                <th scope="row">{{eq._id}}</th>
-                <td>{{eq.liga}}</td>
-                <td>{{eq.nombre}}</td>
-                <td>{{eq.puntos}}</td>
-                <td>{{eq.golesFavor}}</td>
-                <td>{{eq.golesContra}}</td>
-                <td>{{eq.diferenciaGoles}}</td>
+        <tbody>
 
+
+            <tr *ngFor="let equ of equiposEncontrados">
+
+                <td>{{equ.liga}}</td>
+                <td>{{equ.nombre}}</td>
+
+                <td>{{equ.golesFavor}}</td>
+                <td>{{equ.puntos}}</td>
+                <td>{{equ.golesContra}}</td>
+                <td>{{equ.diferenciaGoles}}</td>
 
         </tbody>
 

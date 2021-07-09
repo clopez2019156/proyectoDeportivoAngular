@@ -1,16 +1,71 @@
-h1 {
-    color: red;
-    font-size: 36px;
-    text-align: center
+body {
+    background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 }
 
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 30%;
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 52px 0;
+}
+
+.foto1 {
+    float: left;
+    width: 125px;
+    padding: 10px;
+}
+
+.foto2 {
+    float: left;
+    width: 125px;
+    height: 125px;
+    padding: 10px;
+}
+
+.foto3 {
+    float: right;
+    width: 125px;
+    height: 125px;
+    padding: 10px;
+}
+
+.foto4 {
+    float: right;
+    width: 125px;
+    height: 125px;
+    padding: 10px;
+}
+
+.foto5 {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    width: 125px;
+    height: 125px;
+    padding: 10px;
+}
+
+.titulodejuego {
+    color: white;
+    text-align: center;
+    font-size: 56px;
+    margin-top: 48px;
+}
+
+.subtitulodejuego {
+    color: white;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 64px;
+}
+
+.subtitulo {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 64px;
 }
 
 .fill:hover,

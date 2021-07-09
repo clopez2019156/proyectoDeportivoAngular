@@ -27,7 +27,7 @@ export class EquiposService {
 
   verLigas(): Observable<any>{
     let headersToken = this.headersVariable.set("Authorization", this.token);
-    return this._http.get(this.url + "verEquipos",  {headers: headersToken});
+    return this._http.post(this.url + "verEquipos",  {headers: headersToken});
 
   }
   obtenerListaEquipo(equipo: any): Observable<any>{
@@ -46,9 +46,9 @@ export class EquiposService {
     return this.token;
   }
   getLiga(){
-    var hotel2 = JSON.parse(localStorage.getItem("ligaSeleccionado")||"{}");
-    if(hotel2 != "undefined"){
-      this.liga = hotel2;
+    var liga2 = JSON.parse(localStorage.getItem("ligaSeleccionado")||"{}");
+    if(liga2 != "undefined"){
+      this.liga = liga2;
     }else {
       this.liga = null;
     }

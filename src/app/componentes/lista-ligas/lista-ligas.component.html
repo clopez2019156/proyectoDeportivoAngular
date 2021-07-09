@@ -28,9 +28,10 @@
                     <button type="button" class="offset" data-bs-toggle="modal" data-bs-target="#exampleModalVer" (click)="obtenerLiga(hab._id)">Ver</button>
                 </div>-->
                 </td>
-                <button type="button" class="botons" style="background-color: rgb(42, 86, 207)" routerLink="/listaEquipos" routerLinkActive="active"><b>Eventos</b></button><br>
 
                 <div class="buttons">
+                    <button class="offset" routerLink="/listaEquipos" routerLinkActive="active">Equipos</button>
+
                     <button class="offset" routerLink="/equipos" routerLinkActive="active" (click)="buscarLigaNombre(hab.nombre)">Agregar Equipo</button>
                 </div>
                 <ul class="list-group list-group-flush">
