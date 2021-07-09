@@ -28,7 +28,7 @@ export class LigasComponent implements OnInit {
         console.log(response)
         this.ligas = response.hotelGuardado;
         Swal.fire({
-          title: 'Hotel creado correctamente',
+          title: 'Liga creada correctamente',
           width: 600,
           padding: '3em',
           background: '#fff url(/images/trees.png)',

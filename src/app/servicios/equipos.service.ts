@@ -25,17 +25,35 @@ export class EquiposService {
     return this._http.post(this.url + "crearEquipo", params , {headers: headersToken})
   }
 
-  verLigas(): Observable<any>{
+ /* verLigas(): Observable<any>{
     let headersToken = this.headersVariable.set("Authorization", this.token);
     return this._http.post(this.url + "verEquipos",  {headers: headersToken});
 
-  }
-  obtenerListaEquipo(equipo: any): Observable<any>{
-    let params = JSON.stringify(equipo);
+  }*/
+  obtenerListaEquipo(liga: any): Observable<any>{
+    let params = JSON.stringify(liga);
 
     return this._http.post(this.url + "verEquipos", params, {headers: this.headersVariable})
   }
+  ObtenerEquipos(): Observable<any>{
+    //let headersToken = this.headersVariable.set("Authorization", this.getToken());
+    return this._http.get(this.url + "verEquipos", {headers: this.headersVariable})
+  }
+  editarEquipos(equipo: Equipos, token: any): Observable<any>{
+    let params = JSON.stringify(equipo);
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.put(this.url + "editarEquipo/" + equipo._id, params , {headers: headersToken})
+  }
+  eliminarEquipos(id: String, token: any): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", token);
 
+    return this._http.delete(this.url +"eliminarEquipo/" + id, {headers: headersToken})
+  }
+
+  obtenerEquipo(id: String, token: any): Observable<any>{
+    let headersToken = this.headersVariable.set("Authorization", token);
+    return this._http.get(this.url +"obtenerEquipo/" + id, {headers: headersToken})
+  }
   getToken(){
     var token2 = localStorage.getItem("token");
     if(token2 != "undefined"){
